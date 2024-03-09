@@ -59,7 +59,7 @@ function App() {
   const numSquareHandler = (e) => {
     const inputValue = e.target.value.trim();
 
-    setNumSquares(inputValue !== "" ? Math.min(inputValue, 8) : "");
+    setNumSquares(inputValue !== "" ? Math.min(inputValue, 20) : "");
   };
 
   const sortByHandler = (e) => {
