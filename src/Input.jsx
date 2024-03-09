@@ -1,13 +1,28 @@
 import Button from "./Button";
 
 function Input({ numSquareHandler, addSquareHandler }) {
+  const handleKeyPress = (e) => {
+    if (
+      !/^\d$/.test(e.key) &&
+      !["Backspace", "ArrowLeft", "ArrowRight"].includes(e.key)
+    ) {
+      e.preventDefault();
+    }
+
+    const inputValue = Number(e.target.value + e.key, 10);
+    if (inputValue < 1 || inputValue > 8) {
+      e.preventDefault();
+    }
+  };
+
   return (
     <div>
       <input
-        onChange={numSquareHandler}
         type="number"
         min={3}
         max={8}
+        onChange={numSquareHandler}
+        onKeyDown={handleKeyPress}
         className="border-2 border-black m-2"
       />
       <Button
