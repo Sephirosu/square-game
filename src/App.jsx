@@ -4,17 +4,21 @@ import Input from "./Input";
 import Sort from "./Sort";
 import AddRemove from "./AddRemove";
 
+const sqr = {
+  width: "60px",
+  height: "60px",
+  backgroundColor: "white",
+  border: "solid",
+  margin: "5px",
+};
+
 function App() {
   const [squares, setSquares] = useState([]);
   const [numSquares, setNumSquares] = useState(3);
   const [sortBy, setSortBy] = useState("ascending");
 
   const newSquare = (id) => ({
-    width: "60px",
-    height: "60px",
-    backgroundColor: "white",
-    border: "solid",
-    margin: "5px",
+    ...sqr,
     id: id,
   });
 
@@ -77,7 +81,7 @@ function App() {
       <AddRemove
         sortedSquares={sortedSquares}
         removeSquareHandler={removeSquareHandler}
-      addNewSquare={addNewSquare}
+        addNewSquare={addNewSquare}
       />
     </div>
   );
