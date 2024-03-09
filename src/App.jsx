@@ -93,7 +93,7 @@ function App() {
               {square.id}
               <Button
                 onClick={() => removeSquareHandler(square.id)}
-                className="p-9 text-xl"
+                className="px-2 m-9 text-xl bg-blue-500 border-black  rounded"
               >
                 -
               </Button>
