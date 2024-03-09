@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import Button from "./Button";
 import Input from "./Input";
+import Sort from "./Sort";
 
 function App() {
   const [squares, setSquares] = useState([]);
@@ -70,12 +71,7 @@ function App() {
         addSquareHandler={addSquareHandler}
         numSquareHandler={numSquareHandler}
       />
-      <div className="m-2 border-2 border-black fixed">
-        <select value={sortBy} onChange={sortByHandler}>
-          <option value="ascending">ASC</option>
-          <option value="descending">DESC</option>
-        </select>
-      </div>
+      <Sort sortByHandler={sortByHandler} sortBy={sortBy}/>
 
       <div className="flex mt-10">
         {sortedSquares.map((square, index) => (
