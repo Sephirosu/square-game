@@ -9,8 +9,8 @@ function Input({ numSquareHandler, addSquareHandler, numSquares }) {
       e.preventDefault();
     }
 
-    const inputValue = Number(e.target.value + e.key, 10);
-    if (inputValue < 1 || inputValue > 8) {
+    const inputValue = Number(e.target.value + e.key, 20);
+    if (inputValue < 1 || inputValue > 20) {
       e.preventDefault();
     }
   };
@@ -21,7 +21,7 @@ function Input({ numSquareHandler, addSquareHandler, numSquares }) {
         value={numSquares}
         type="number"
         min={3}
-        max={8}
+        max={20}
         onChange={numSquareHandler}
         onKeyDown={handleKeyPress}
         className="border-2 border-black m-2"
