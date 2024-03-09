@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-function Input({ numSquareHandler, addSquareHandler }) {
+function Input({ numSquareHandler, addSquareHandler, numSquares }) {
   const handleKeyPress = (e) => {
     if (
       !/^\d$/.test(e.key) &&
@@ -18,6 +18,7 @@ function Input({ numSquareHandler, addSquareHandler }) {
   return (
     <div>
       <input
+        value={numSquares}
         type="number"
         min={3}
         max={8}
