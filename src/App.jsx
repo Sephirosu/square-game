@@ -57,7 +57,9 @@ function App() {
   };
 
   const numSquareHandler = (e) => {
-    setNumSquares(Math.min(e.target.value, 8));
+    const inputValue = e.target.value.trim();
+
+    setNumSquares(inputValue !== "" ? Math.min(inputValue, 8) : "");
   };
 
   const sortByHandler = (e) => {
@@ -75,6 +77,7 @@ function App() {
       <Input
         addSquareHandler={addSquareHandler}
         numSquareHandler={numSquareHandler}
+        numSquares={numSquares}
       />
       <Sort sortByHandler={sortByHandler} sortBy={sortBy} />
 
