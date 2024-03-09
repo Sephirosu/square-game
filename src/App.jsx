@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import Button from "./Button";
+import Input from "./Input";
 
 function App() {
   const [squares, setSquares] = useState([]);
@@ -65,20 +66,10 @@ function App() {
 
   return (
     <div>
-      <input
-        onChange={numSquareHandler}
-        type="number"
-        min={3}
-        max={8}
-        className="border-2 border-black m-2"
+      <Input
+        addSquareHandler={addSquareHandler}
+        numSquareHandler={numSquareHandler}
       />
-      <Button
-        onClick={addSquareHandler}
-        className="border-2 border-blue-500 px-1"
-      >
-        Submit
-      </Button>
-
       <div className="m-2 border-2 border-black fixed">
         <select value={sortBy} onChange={sortByHandler}>
           <option value="ascending">ASC</option>
